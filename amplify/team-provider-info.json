@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-drinkwards-dev-160052-authRole",
+      "UnauthRoleArn": "arn:aws:iam::235541341898:role/amplify-drinkwards-dev-160052-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::235541341898:role/amplify-drinkwards-dev-160052-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-drinkwards-dev-160052-deployment",
+      "UnauthRoleName": "amplify-drinkwards-dev-160052-unauthRole",
+      "StackName": "amplify-drinkwards-dev-160052",
+      "StackId": "arn:aws:cloudformation:us-east-1:235541341898:stack/amplify-drinkwards-dev-160052/48516330-46f4-11eb-88ea-0eac0ccc6c9d",
+      "AmplifyAppId": "d3divn9kwgt0f3"
+    },
+    "categories": {
+      "auth": {
+        "drinkwardsdf84d8c2": {}
+      }
+    }
+  }
+}

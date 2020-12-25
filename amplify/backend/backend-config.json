@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "drinkwardsdf84d8c2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
