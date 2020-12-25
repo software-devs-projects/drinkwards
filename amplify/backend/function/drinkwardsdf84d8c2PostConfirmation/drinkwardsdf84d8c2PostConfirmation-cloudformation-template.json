@@ -102,7 +102,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-drinkwards-dev-160052-deployment",
-          "S3Key": "amplify-builds/drinkwardsdf84d8c2PostConfirmation-6232706c49416355576a-build.zip"
+          "S3Key": "amplify-builds/drinkwardsdf84d8c2PostConfirmation-77475a6a77724e597839-build.zip"
         }
       }
     },
