@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, Alert, SafeAreaView, Button, Text } from 'react-native'
 import { withAuthenticator } from 'aws-amplify-react-native'
 import { Auth } from 'aws-amplify'
@@ -22,6 +22,15 @@ const App = () => {
 	const handleLogout = () => {
 		Auth.signOut()
 	}
+
+	const getUser = async () => {
+		const user = await Auth.currentAuthenticatedUser()
+		console.log(JSON.stringify(user, null, 2))
+	}
+
+	useEffect(() => {
+		getUser()
+	}, [])
 
 	return (
 		<SafeAreaView>

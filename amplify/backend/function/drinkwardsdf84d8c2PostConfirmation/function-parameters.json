@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group"
+  ],
+  "parentResource": "drinkwardsdf84d8c2",
+  "functionName": "drinkwardsdf84d8c2PostConfirmation",
+  "resourceName": "drinkwardsdf84d8c2PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/Users/kandarpajvalia/.config/yarn/global/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "roleName": "drinkwardsdf84d8c2PostConfirmation",
+  "skipEdit": true,
+  "GROUP": "customer",
+  "enableCors": false
+}
