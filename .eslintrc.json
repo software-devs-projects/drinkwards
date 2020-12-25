@@ -44,7 +44,53 @@
             "never"
 		],
 		"no-use-before-define": "off",
-		"@typescript-eslint/no-use-before-define": ["error"]
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"rules": {
+			"indent": [
+				"error",
+				"tab"
+			],
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
+			"quotes": [
+				"error",
+				"single"
+			],
+			"semi": [
+				"error",
+				"never"
+			],
+			"react/jsx-filename-extension": [
+				1, 
+				{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+			],
+			"react/jsx-indent": [
+				"error",
+				"tab"
+			],
+			"react/jsx-indent-props": [
+				"error",
+				"tab"
+			],
+			"import/extensions": [
+				"error",
+				"ignorePackages",
+				{
+					"js": "never",
+					"jsx": "never",
+					"ts": "never",
+					"tsx": "never"
+				}
+			],
+			"react/react-in-jsx-scope": "off",
+			"@typescript-eslint/explicit-module-boundary-types": "off",
+			"no-tabs": "off",
+			"comma-dangle": "off",
+			"react/jsx-props-no-spreading": "off",
+			"arrow-parens": "off"
+		}
 	},
 	"plugins": [
         "@typescript-eslint"
