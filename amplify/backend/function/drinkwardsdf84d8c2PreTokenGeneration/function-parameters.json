@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "alter-claims"
+  ],
+  "parentResource": "drinkwardsdf84d8c2",
+  "functionName": "drinkwardsdf84d8c2PreTokenGeneration",
+  "resourceName": "drinkwardsdf84d8c2PreTokenGeneration",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/Users/kandarpajvalia/.config/yarn/global/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PreTokenGeneration",
+  "triggerTemplate": "PreTokenGeneration.json.ejs",
+  "roleName": "drinkwardsdf84d8c2PreTokenGeneration",
+  "skipEdit": true,
+  "enableCors": false
+}

@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, Alert, SafeAreaView, Button, Text } from 'react-native'
+import { withAuthenticator } from 'aws-amplify-react-native'
+import { Auth } from 'aws-amplify'
 import { RNCamera } from 'react-native-camera'
 
 const styles = StyleSheet.create({
@@ -17,6 +19,19 @@ const App = () => {
 		setEmail(e.data)
 	}
 
+	const handleLogout = () => {
+		Auth.signOut()
+	}
+
+	const getUser = async () => {
+		const user = await Auth.currentAuthenticatedUser()
+		console.log(JSON.stringify(user, null, 2))
+	}
+
+	useEffect(() => {
+		getUser()
+	}, [])
+
 	return (
 		<SafeAreaView>
 			<View style={styles.container}>
@@ -30,8 +45,9 @@ const App = () => {
 			</View>
 			<Button onPress={() => setScan(!scan)} title={scan ? 'Stop' : 'Scan'} />
 			<Text>{email}</Text>
+			<Button onPress={handleLogout} title={'Log out'} />
 		</SafeAreaView>
 	)
 }
 
-export default App
+export default withAuthenticator(App)
