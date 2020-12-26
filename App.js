@@ -1,31 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, Alert, SafeAreaView, Button, Text } from 'react-native'
+import { Text } from 'react-native'
 import { withAuthenticator } from 'aws-amplify-react-native'
 import { Auth } from 'aws-amplify'
-import { RNCamera } from 'react-native-camera'
-
-const styles = StyleSheet.create({
-	container: {
-		height: 300,
-		textAlign: 'center'
-	}
-})
+import UserHomeScreen from './src/UserHomeScreen'
+import BusinessHomeScreen from './src/BusinessHomeScreen'
 
 const App = () => {
-	const [scan, setScan] = useState(true)
-	const [email, setEmail] = useState('')
-
-	const handleQRCodeRead = e => {
-		setEmail(e.data)
-	}
-
-	const handleLogout = () => {
-		Auth.signOut()
-	}
+	const [user, setUser] = useState(null)
 
 	const getUser = async () => {
 		const user = await Auth.currentAuthenticatedUser()
-		console.log(JSON.stringify(user, null, 2))
+		setUser(user)		
 	}
 
 	useEffect(() => {
@@ -33,21 +18,21 @@ const App = () => {
 	}, [])
 
 	return (
-		<SafeAreaView>
-			<View style={styles.container}>
-				{scan && (
-					<RNCamera
-						style={{ flex: 1, alignItems: 'center' }}
-						captureAudio={false}
-						onBarCodeRead={handleQRCodeRead}
-					/>
-				)}
-			</View>
-			<Button onPress={() => setScan(!scan)} title={scan ? 'Stop' : 'Scan'} />
-			<Text>{email}</Text>
-			<Button onPress={handleLogout} title={'Log out'} />
-		</SafeAreaView>
+		<>
+			{(() => {
+				if(!user) {
+					return <Text>Loading</Text>
+				} else {
+					const group = user.signInUserSession.accessToken.payload['cognito:groups']
+					if(group.includes('business')) {
+						return <BusinessHomeScreen />
+					}
+					return <UserHomeScreen />
+				}
+			})()}
+		</>
 	)
+
 }
 
 export default withAuthenticator(App)
