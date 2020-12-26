@@ -5,7 +5,7 @@ import { RNCamera } from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Input } from 'react-native-elements'
 import { useMutation } from '@apollo/client'
-import { UPDATE_REWARD_POINTS } from './graphql/mutations'
+import { UPDATE_REWARD_POINTS, ADD_PURCHASE } from './graphql/mutations'
 
 const styles = StyleSheet.create({
 	container: {
@@ -20,6 +20,7 @@ const AddRewards = () => {
 	const [amount, setAmount] = useState(0.0)
 	const [userId, setUserId] = useState('')
 	const [updateRewardPoints] = useMutation(UPDATE_REWARD_POINTS)
+	const [addPurchase] = useMutation(ADD_PURCHASE)
 
 	const handleQRCodeRead = e => {
 		setUserId(e.data)
@@ -60,6 +61,20 @@ const AddRewards = () => {
 				}
 			},
 		})
+		addPurchase({
+			variables: {
+				purchaseAmount: amount,
+				purchaseType: 'reward',
+				rewardAmount: rpoints,
+				userId,
+			},
+			context: {
+				headers: {
+					Authorization: `Bearer ${idToken}`,
+					'x-hasura-role': 'business'
+				}
+			},
+		})
 		resetPage()
 	}
 
@@ -73,44 +88,44 @@ const AddRewards = () => {
 						onBarCodeRead={handleQRCodeRead}
 					/>
 				) : (
-					<>
-						<Input
-							value={userId}
-							disabled
-							leftIcon={
-								<Icon
-									name='user'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Input
-							value={rpoints.toFixed(2).toString()}
-							disabled
-							leftIcon={
-								<Icon
-									name='gift'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Input
-							placeholder='Enter amount'
-							value={amount.toString()}
-							onChangeText={handleChangeAmount}
-							leftIcon={
-								<Icon
-									name='usd'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Button disabled={!userId} onPress={handleSubmit} title={'Submit'} />
-					</>
-				)}
+						<>
+							<Input
+								value={userId}
+								disabled
+								leftIcon={
+									<Icon
+										name='user'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Input
+								value={rpoints.toFixed(2).toString()}
+								disabled
+								leftIcon={
+									<Icon
+										name='gift'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Input
+								placeholder='Enter amount'
+								value={amount.toString()}
+								onChangeText={handleChangeAmount}
+								leftIcon={
+									<Icon
+										name='usd'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Button disabled={!userId} onPress={handleSubmit} title={'Submit'} />
+						</>
+					)}
 			</View>
 			<Button onPress={resetPage} title={'Reset'} />
 			<Button onPress={handleLogout} title={'Log out'} />

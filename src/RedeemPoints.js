@@ -5,8 +5,8 @@ import { RNCamera } from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Input } from 'react-native-elements'
 import { useMutation, useLazyQuery } from '@apollo/client'
-import { UPDATE_REWARD_POINTS } from './graphql/mutations'
-import { GET_REWARD_POINTS } from './graphql/ queries'
+import { UPDATE_REWARD_POINTS, ADD_PURCHASE } from './graphql/mutations'
+import { GET_REWARD_POINTS } from './graphql/queries'
 
 const styles = StyleSheet.create({
 	container: {
@@ -22,6 +22,7 @@ const RedeemPoints = () => {
 	const [userId, setUserId] = useState('')
 	const [getRewardPoints, rewardPointsResponse] = useLazyQuery(GET_REWARD_POINTS)
 	const [updateRewardPoints] = useMutation(UPDATE_REWARD_POINTS)
+	const [addPurchase] = useMutation(ADD_PURCHASE)
 
 	useEffect(() => {
 		if (rewardPointsResponse.data) {
@@ -85,6 +86,20 @@ const RedeemPoints = () => {
 				}
 			},
 		})
+		addPurchase({
+			variables: {
+				purchaseAmount: rewardPoints,
+				purchaseType: 'redeem',
+				rewardAmount: pointsToRedeem,
+				userId,
+			},
+			context: {
+				headers: {
+					Authorization: `Bearer ${idToken}`,
+					'x-hasura-role': 'business'
+				}
+			},
+		})
 		resetPage()
 	}
 
@@ -98,56 +113,56 @@ const RedeemPoints = () => {
 						onBarCodeRead={handleQRCodeRead}
 					/>
 				) : (
-					<>
-						<Input
-							value={userId}
-							disabled
-							leftIcon={
-								<Icon
-									name='user'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Input
-							value={rewardPoints.toFixed(2).toString()}
-							disabled
-							leftIcon={
-								<Icon
-									name='money'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Input
-							value={(rewardPoints - pointsToRedeem).toFixed(2).toString()}
-							disabled
-							leftIcon={
-								<Icon
-									name='credit-card'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Input
-							placeholder='Points to redeem'
-							value={pointsToRedeem.toString()}
-							onChangeText={handleChangeRedeem}
-							leftIcon={
-								<Icon
-									name='usd'
-									size={24}
-									color='black'
-								/>
-							}
-						/>
-						<Button disabled={!userId} onPress={redeemAll} title={'Redeem All'} />
-						<Button disabled={!userId} onPress={handleSubmit} title={'Confirm Redeem'} />
-					</>
-				)}
+						<>
+							<Input
+								value={userId}
+								disabled
+								leftIcon={
+									<Icon
+										name='user'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Input
+								value={rewardPoints.toFixed(2).toString()}
+								disabled
+								leftIcon={
+									<Icon
+										name='money'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Input
+								value={(rewardPoints - pointsToRedeem).toFixed(2).toString()}
+								disabled
+								leftIcon={
+									<Icon
+										name='credit-card'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Input
+								placeholder='Points to redeem'
+								value={pointsToRedeem.toString()}
+								onChangeText={handleChangeRedeem}
+								leftIcon={
+									<Icon
+										name='usd'
+										size={24}
+										color='black'
+									/>
+								}
+							/>
+							<Button disabled={!userId} onPress={redeemAll} title={'Redeem All'} />
+							<Button disabled={!userId} onPress={handleSubmit} title={'Confirm Redeem'} />
+						</>
+					)}
 			</View>
 			<Button onPress={resetPage} title={'Reset'} />
 		</SafeAreaView>

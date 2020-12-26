@@ -13,7 +13,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import QRCode from 'react-native-qrcode-svg'
 import { Auth, JS } from 'aws-amplify'
 import { useLazyQuery } from '@apollo/client'
-import { GET_REWARD_POINTS } from './graphql/ queries'
+import { GET_REWARD_POINTS } from './graphql/queries'
 
 const styles = StyleSheet.create({
 	body: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 	appName: {
 		color: 'white',
 		fontWeight: 'bold',
-		margin : 10
+		margin: 10
 	},
 	username: {
 		color: 'white',
