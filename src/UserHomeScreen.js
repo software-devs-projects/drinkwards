@@ -81,7 +81,7 @@ const UserHomeScreen = () => {
 				headers: {
 					Authorization: `Bearer ${jwtToken}`
 				}
-			},
+			}
 		})
 	}
 
