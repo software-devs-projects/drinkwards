@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, Button } from 'react-native'
+import { StyleSheet, View, Text, Button, SafeAreaView } from 'react-native'
 import { Auth } from 'aws-amplify'
 import { RNCamera } from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Input } from 'react-native-elements'
 import { useMutation } from '@apollo/client'
 import { UPDATE_REWARD_POINTS } from './graphql/mutations'
-import { GET_REWARD_POINTS } from './graphql/ queries'
-
 
 const styles = StyleSheet.create({
 	container: {
@@ -24,7 +22,7 @@ const BusinessHomeScreen = () => {
 	const [updateRewardPoints] = useMutation(UPDATE_REWARD_POINTS)
 
 	const handleQRCodeRead = e => {
-		setEmail(e.data)
+		setUserId(e.data)
 		setScan(false)
 	}
 
@@ -36,6 +34,13 @@ const BusinessHomeScreen = () => {
 
 	const handleLogout = () => {
 		Auth.signOut()
+	}
+
+	const resetPage = () => {
+		setUserId('')
+		setAmount(0.0)
+		setrpoints(0.0)
+		setScan(true)
 	}
 
 	const handleSubmit = async () => {
@@ -51,60 +56,65 @@ const BusinessHomeScreen = () => {
 			context: {
 				headers: {
 					Authorization: `Bearer ${idToken}`,
-					'x-hasura-role': 'buisness'
+					'x-hasura-role': 'business'
 				}
 			},
 		})
+		resetPage()
 	}
 
 	return (
-		<>
+		<SafeAreaView>
 			<View style={styles.container}>
-				{scan && (
+				{scan ? (
 					<RNCamera
 						style={{ flex: 1, alignItems: 'center' }}
 						captureAudio={false}
 						onBarCodeRead={handleQRCodeRead}
 					/>
+				) : (
+					<>
+						<Input
+							value={userId}
+							disabled
+							leftIcon={
+								<Icon
+									name='user'
+									size={24}
+									color='black'
+								/>
+							}
+						/>
+						<Input
+							value={rpoints.toFixed(2).toString()}
+							disabled
+							leftIcon={
+								<Icon
+									name='gift'
+									size={24}
+									color='black'
+								/>
+							}
+						/>
+						<Input
+							placeholder='Enter amount'
+							value={amount.toString()}
+							onChangeText={handleChangeAmount}
+							leftIcon={
+								<Icon
+									name='usd'
+									size={24}
+									color='black'
+								/>
+							}
+						/>
+						<Button disabled={!userId} onPress={handleSubmit} title={'Submit'} />
+					</>
 				)}
 			</View>
-			<Input
-				value={userId}
-				disabled
-				leftIcon={
-					<Icon
-						name='user'
-						size={24}
-						color='black'
-					/>
-				}
-			/>
-			<Input
-				value={rpoints.toPrecision(2).toString()}
-				disabled
-				leftIcon={
-					<Icon
-						name='gift'
-						size={24}
-						color='black'
-					/>
-				}
-			/>
-			<Input
-				placeholder='Enter amount'
-				value={amount.toString()}
-				onChangeText={handleChangeAmount}
-				leftIcon={
-					<Icon
-						name='usd'
-						size={24}
-						color='black'
-					/>
-				}
-			/>
-			<Button disabled={!userId} onPress={handleSubmit} title={'Submit'} />
+			<Button onPress={resetPage} title={'Reset'} />
 			<Button onPress={handleLogout} title={'Log out'} />
-		</>
+		</SafeAreaView>
 	)
 }
 

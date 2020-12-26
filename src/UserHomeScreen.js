@@ -24,18 +24,23 @@ const styles = StyleSheet.create({
 	},
 	appName: {
 		color: 'white',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		margin : 10
 	},
-	user: {
+	username: {
 		color: 'white',
 		fontWeight: 'bold',
-		opacity: 0.7
+		opacity: 0.7,
+	},
+	usernameContainer: {
+		marginLeft: 10
 	},
 	linearGradient: {
+		display: 'flex',
+		alignItems: 'center',
 		borderRadius: 5,
-		textAlign: 'center',
 		margin: 30,
-		padding: 10
+		padding: 10,
 	},
 	cardTitle: {
 		color: 'black',
@@ -100,8 +105,8 @@ const UserHomeScreen = () => {
 			<StatusBar barStyle="light-content" />
 			<SafeAreaView style={styles.body}>
 				<Text h1 style={styles.appName}>Drinkwards</Text>
-				<Text h4>
-					<Text style={styles.user}>
+				<Text h4 style={styles.usernameContainer}>
+					<Text style={styles.username}>
 						{`Hey ${username}`}
 					</Text>
 					🍺
@@ -109,7 +114,7 @@ const UserHomeScreen = () => {
 				<LinearGradient colors={['#70371f', '#AA4B2B', '#FF9A75']} style={styles.linearGradient}>
 					<Text h4 style={styles.cardTitle}>Reward Dollars</Text>
 					<View>
-						<Text h1 style={styles.rewards}>{rewardPoints}</Text>
+						<Text h1 style={styles.rewards}>${rewardPoints.toFixed(2)}</Text>
 					</View>
 				</LinearGradient>
 				<View style={styles.qrContainer}>
