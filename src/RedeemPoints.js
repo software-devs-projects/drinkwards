@@ -5,8 +5,8 @@ import { RNCamera } from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Input } from 'react-native-elements'
 import { useMutation, useLazyQuery } from '@apollo/client'
-import { UPDATE_REWARD_POINTS } from './graphql/mutations'
-import { GET_REWARD_POINTS } from './graphql/ queries'
+import { UPDATE_REWARD_POINTS, ADD_PURCHASE } from './graphql/mutations'
+import { GET_REWARD_POINTS } from './graphql/queries'
 
 const styles = StyleSheet.create({
 	container: {
