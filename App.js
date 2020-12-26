@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text } from 'react-native'
 import { withAuthenticator } from 'aws-amplify-react-native'
 import { Auth } from 'aws-amplify'
-import UserHomeScreen from './src/UserHomeScreen'
+import UserMain from './src/UserMain'
 import BusinessHomeScreen from './src/BusinessHomeScreen'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -31,7 +31,7 @@ const App = () => {
 					if (group.includes('business')) {
 						return <BusinessHomeScreen />
 					}
-					return <UserHomeScreen />
+					return <UserMain />
 				}
 			})()}
 		</>
