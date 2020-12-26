@@ -10,7 +10,7 @@ import { GET_REWARD_POINTS } from './graphql/ queries'
 
 const styles = StyleSheet.create({
 	container: {
-		height: 300,
+		height: 400,
 		textAlign: 'center'
 	}
 })
@@ -25,7 +25,6 @@ const RedeemPoints = () => {
 
 	useEffect(() => {
 		if (rewardPointsResponse.data) {
-			console.log(JSON.stringify(rewardPointsResponse.data, null, 2))
 			setRewardPoints(rewardPointsResponse.data.user_by_pk.rewardPoints)
 		}
 	}, [rewardPointsResponse])
@@ -36,8 +35,6 @@ const RedeemPoints = () => {
 
 		const user = await Auth.currentAuthenticatedUser()
 		const { jwtToken } = user.signInUserSession.idToken
-
-		console.log(jwtToken)
 
 		getRewardPoints({
 			variables: {
@@ -60,14 +57,18 @@ const RedeemPoints = () => {
 	}
 
 	const handleChangeRedeem = (value) => {
+		if (value > rewardPoints) {
+			return
+		}
+
 		setPointsToRedeem(value)
 	}
 
-	const handleSubmit = async () => {
+	const redeemAll = () => {
+		setPointsToRedeem(rewardPoints)
+	}
 
-		if (pointsToRedeem > rewardPoints) {
-			return
-		}
+	const handleSubmit = async () => {
 
 		const user = await Auth.currentAuthenticatedUser()
 		const idToken = user.signInUserSession.idToken.jwtToken
@@ -121,6 +122,17 @@ const RedeemPoints = () => {
 							}
 						/>
 						<Input
+							value={(rewardPoints - pointsToRedeem).toFixed(2).toString()}
+							disabled
+							leftIcon={
+								<Icon
+									name='credit-card'
+									size={24}
+									color='black'
+								/>
+							}
+						/>
+						<Input
 							placeholder='Points to redeem'
 							value={pointsToRedeem.toString()}
 							onChangeText={handleChangeRedeem}
@@ -132,7 +144,8 @@ const RedeemPoints = () => {
 								/>
 							}
 						/>
-						<Button disabled={!userId} onPress={handleSubmit} title={'Submit'} />
+						<Button disabled={!userId} onPress={redeemAll} title={'Redeem All'} />
+						<Button disabled={!userId} onPress={handleSubmit} title={'Confirm Redeem'} />
 					</>
 				)}
 			</View>
