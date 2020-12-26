@@ -31,7 +31,9 @@ const styles = StyleSheet.create({
 	},
 	linearGradient: {
 		borderRadius: 5,
-		textAlign: 'center'
+		textAlign: 'center',
+		margin: 30,
+		padding: 10
 	},
 	cardTitle: {
 		color: 'black',
@@ -40,6 +42,12 @@ const styles = StyleSheet.create({
 	rewards: {
 		color: 'black',
 		fontWeight: '700'
+	},
+	qrContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		margin: 50
+
 	}
 })
 
@@ -69,9 +77,12 @@ const UserHomeScreen = () => {
 						<Text h1 style={styles.rewards}>{rewardPoints}</Text>
 					</View>
 				</LinearGradient>
-				<QRCode
-					value="kandarpa9@gmail.com"
-				/>
+				<View style={styles.qrContainer}>
+					<QRCode
+						value="kandarpa9@gmail.com"
+						size={200}
+					/>
+				</View>
 				<Button onPress={handleLogout} title={'Log out'} />
 			</SafeAreaView>
 		</>
