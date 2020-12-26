@@ -91,7 +91,6 @@ const UserHomeScreen = () => {
 
 	useEffect(() => {
 		if (rewardPointsResponse.data) {
-			console.log(JSON.stringify(rewardPointsResponse.data, null, 2))
 			setRewardPoints(rewardPointsResponse.data.user_by_pk.rewardPoints)
 		}
 	}, [rewardPointsResponse])
