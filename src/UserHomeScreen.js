@@ -10,6 +10,7 @@ import {
 	Text
 } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
+import QRCode from 'react-native-qrcode-svg'
 import { Auth } from 'aws-amplify'
 
 const styles = StyleSheet.create({
@@ -68,6 +69,9 @@ const UserHomeScreen = () => {
 						<Text h1 style={styles.rewards}>{rewardPoints}</Text>
 					</View>
 				</LinearGradient>
+				<QRCode
+					value="kandarpa9@gmail.com"
+				/>
 				<Button onPress={handleLogout} title={'Log out'} />
 			</SafeAreaView>
 		</>
