@@ -5,7 +5,7 @@ import {
 } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { useLazyQuery } from '@apollo/client'
-import { GET_PURCHASE_HISTORY } from './graphql/ queries'
+import { GET_PURCHASE_HISTORY } from './graphql/queries'
 import { Auth } from 'aws-amplify'
 
 const styles = StyleSheet.create({
