@@ -6,7 +6,12 @@ const createApolloClient = () => new ApolloClient({
     link: new HttpLink({
         uri: 'https://liquor.herokuapp.com/v1/graphql'
     }),
-    cache: new InMemoryCache(),
+	cache: new InMemoryCache(),
+	defaultOptions: {
+		watchQuery: {
+			fetchPolicy: 'network-only'
+		}
+	}
 })
 
 export { createApolloClient }
