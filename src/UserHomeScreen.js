@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
 	SafeAreaView,
 	StatusBar,
@@ -53,7 +53,19 @@ const styles = StyleSheet.create({
 
 const UserHomeScreen = () => {
 	const [rewardPoints, setRewardPoints] = useState(0)
-	const [name, setName] = useState('Anshul')
+	const [qrId, setQrId] = useState(null)
+	const [username, setUsername] = useState('')
+
+	const setUserData = async () => {
+		const user = await Auth.currentAuthenticatedUser()
+		const { sub, email } = user.attributes
+		setQrId(sub)
+		setUsername(email.split('@')[0])
+	}
+
+	useEffect(() => {
+		setUserData()
+	}, [])
 
 	const handleLogout = () => {
 		Auth.signOut()
@@ -66,8 +78,7 @@ const UserHomeScreen = () => {
 				<Text h1 style={styles.appName}>Drinkwards</Text>
 				<Text h4>
 					<Text style={styles.user}>
-						Hey
-						{ ` ${name}`}
+						{`Hey ${username}`}
 					</Text>
 					🍺
 				</Text>
@@ -78,10 +89,10 @@ const UserHomeScreen = () => {
 					</View>
 				</LinearGradient>
 				<View style={styles.qrContainer}>
-					<QRCode
-						value="kandarpa9@gmail.com"
+					{qrId && (<QRCode
+						value={qrId}
 						size={200}
-					/>
+					/>)}
 				</View>
 				<Button onPress={handleLogout} title={'Log out'} />
 			</SafeAreaView>
