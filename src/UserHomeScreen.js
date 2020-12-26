@@ -11,7 +11,9 @@ import {
 } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
 import QRCode from 'react-native-qrcode-svg'
-import { Auth } from 'aws-amplify'
+import { Auth, JS } from 'aws-amplify'
+import { useLazyQuery } from '@apollo/client'
+import { GET_REWARD_POINTS } from './graphql/ queries'
 
 const styles = StyleSheet.create({
 	body: {
@@ -52,20 +54,42 @@ const styles = StyleSheet.create({
 })
 
 const UserHomeScreen = () => {
+	const [getRewardPoints, rewardPointsResponse] = useLazyQuery(GET_REWARD_POINTS)
+
 	const [rewardPoints, setRewardPoints] = useState(0)
-	const [qrId, setQrId] = useState(null)
+	const [userId, setUserId] = useState(null)
 	const [username, setUsername] = useState('')
 
 	const setUserData = async () => {
 		const user = await Auth.currentAuthenticatedUser()
 		const { sub, email } = user.attributes
-		setQrId(sub)
+		setUserId(sub)
 		setUsername(email.split('@')[0])
+
+		const { jwtToken } = user.signInUserSession.idToken
+
+		getRewardPoints({
+			variables: {
+				userId: sub
+			},
+			context: {
+				headers: {
+					Authorization: `Bearer ${jwtToken}`
+				}
+			},
+		})
 	}
 
 	useEffect(() => {
 		setUserData()
 	}, [])
+
+	useEffect(() => {
+		if (rewardPointsResponse.data) {
+			console.log(JSON.stringify(rewardPointsResponse.data, null, 2))
+			setRewardPoints(rewardPointsResponse.data.user_by_pk.rewardPoints)
+		}
+	}, [rewardPointsResponse])
 
 	const handleLogout = () => {
 		Auth.signOut()
@@ -89,8 +113,8 @@ const UserHomeScreen = () => {
 					</View>
 				</LinearGradient>
 				<View style={styles.qrContainer}>
-					{qrId && (<QRCode
-						value={qrId}
+					{userId && (<QRCode
+						value={userId}
 						size={200}
 					/>)}
 				</View>
