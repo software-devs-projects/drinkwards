@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
 	SafeAreaView,
 	StatusBar,
@@ -10,6 +10,7 @@ import {
 	Text
 } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
+import QRCode from 'react-native-qrcode-svg'
 import { Auth } from 'aws-amplify'
 
 const styles = StyleSheet.create({
@@ -30,7 +31,9 @@ const styles = StyleSheet.create({
 	},
 	linearGradient: {
 		borderRadius: 5,
-		textAlign: 'center'
+		textAlign: 'center',
+		margin: 30,
+		padding: 10
 	},
 	cardTitle: {
 		color: 'black',
@@ -39,12 +42,30 @@ const styles = StyleSheet.create({
 	rewards: {
 		color: 'black',
 		fontWeight: '700'
+	},
+	qrContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		margin: 50
+
 	}
 })
 
 const UserHomeScreen = () => {
 	const [rewardPoints, setRewardPoints] = useState(0)
-	const [name, setName] = useState('Anshul')
+	const [qrId, setQrId] = useState(null)
+	const [username, setUsername] = useState('')
+
+	const setUserData = async () => {
+		const user = await Auth.currentAuthenticatedUser()
+		const { sub, email } = user.attributes
+		setQrId(sub)
+		setUsername(email.split('@')[0])
+	}
+
+	useEffect(() => {
+		setUserData()
+	}, [])
 
 	const handleLogout = () => {
 		Auth.signOut()
@@ -57,8 +78,7 @@ const UserHomeScreen = () => {
 				<Text h1 style={styles.appName}>Drinkwards</Text>
 				<Text h4>
 					<Text style={styles.user}>
-						Hey
-						{ ` ${name}`}
+						{`Hey ${username}`}
 					</Text>
 					🍺
 				</Text>
@@ -68,6 +88,12 @@ const UserHomeScreen = () => {
 						<Text h1 style={styles.rewards}>{rewardPoints}</Text>
 					</View>
 				</LinearGradient>
+				<View style={styles.qrContainer}>
+					{qrId && (<QRCode
+						value={qrId}
+						size={200}
+					/>)}
+				</View>
 				<Button onPress={handleLogout} title={'Log out'} />
 			</SafeAreaView>
 		</>
