@@ -13,6 +13,7 @@ const App = () => {
 
 	const getUser = async () => {
 		const user = await Auth.currentAuthenticatedUser()
+		console.log(user.signInUserSession.idToken.jwtToken)
 		setUser(user)
 	}
 
