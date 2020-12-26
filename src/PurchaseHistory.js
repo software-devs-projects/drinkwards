@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeAreaView, StatusBar, StyleSheet, View, ScrollView } from 'react-native'
 import {
     Text, ListItem
 } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import { useLazyQuery } from '@apollo/client'
+import { GET_PURCHASE_HISTORY } from './graphql/ queries'
+import { Auth } from 'aws-amplify'
 
 const styles = StyleSheet.create({
     appName: {
@@ -26,87 +29,96 @@ const styles = StyleSheet.create({
     scrollView: {
         display: 'flex',
         flexGrow: 1
+    },
+    purchaseInfo: {
+        display: 'flex',
+        flexDirection: 'row'
     }
 })
 const PurchaseHistory = () => {
+    const [getPurchaseHstory, purchaseHistoryResponse] = useLazyQuery(GET_PURCHASE_HISTORY)
+    const [purchaseHistory, setpurchaseHistory] = useState([])
 
-    const list = [
-        {
-            created_at: '2020-12-26T15:17:00.011791+00:00',
-            purchaseAmount: '2',
-            purchaseType: 'reward'
-        },
-        {
-            created_at: '2020-12-26T15:23:21.689156+00:00',
-            purchaseAmount: '5',
-            purchaseType: 'redeem'
-        },
-        {
-            created_at: '2020-12-26T15:17:00.011791+00:00',
-            purchaseAmount: '2',
-            purchaseType: 'reward'
-        },
-        {
-            created_at: '2020-12-26T15:23:21.689156+00:00',
-            purchaseAmount: '5',
-            purchaseType: 'redeem'
-        },
-        {
-            created_at: '2020-12-26T15:17:00.011791+00:00',
-            purchaseAmount: '2',
-            purchaseType: 'reward'
-        },
-        {
-            created_at: '2020-12-26T15:23:21.689156+00:00',
-            purchaseAmount: '5',
-            purchaseType: 'redeem'
-        },
-        {
-            created_at: '2020-12-26T15:17:00.011791+00:00',
-            purchaseAmount: '2',
-            purchaseType: 'reward'
-        },
-        {
-            created_at: '2020-12-26T15:23:21.689156+00:00',
-            purchaseAmount: '5',
-            purchaseType: 'redeem'
-        },
-        {
-            created_at: '2020-12-26T15:17:00.011791+00:00',
-            purchaseAmount: '2',
-            purchaseType: 'reward'
-        },
-        {
-            created_at: '2020-12-26T15:23:21.689156+00:00',
-            purchaseAmount: '5',
-            purchaseType: 'redeem'
-        },
-    ]
+
+    const getUserData = async () => {
+        const user = await Auth.currentAuthenticatedUser()
+        const { sub } = user.attributes
+        console.log('sub', sub)
+        const { jwtToken } = user.signInUserSession.idToken
+
+        console.log(jwtToken)
+
+        getPurchaseHstory({
+            variables: {
+                userId: sub
+            },
+            context: {
+                headers: {
+                    Authorization: `Bearer ${jwtToken}`
+                }
+            }
+        })
+    }
+
+    useEffect(() => {
+        getUserData()
+    }, [])
+
+    useEffect(() => {
+        if (purchaseHistoryResponse.data) {
+            console.log(purchaseHistoryResponse.data)
+            setpurchaseHistory(purchaseHistoryResponse.data.purchaseHistory)
+        }
+    }, [purchaseHistoryResponse])
+
+    // console.log(purchaseHistoryResponse.error)
+
+    const purchaseHistoryView = (
+        <React.Fragment>
+            <ScrollView style={styles.scrollView}>
+                {
+                    purchaseHistory.map((item, i) => (
+                        <ListItem key={i} bottomDivider>
+
+                            <Icon size={20} color='black' name='credit-card-alt' />
+                            <View style={styles.purchaseAmount}>
+
+                                <View style={styles.purchaseInfo}>
+                                    <Text>PURCHASE</Text>
+                                    <View style={styles.purchaseAmount}>
+                                        <Text style={{ alignSelf: 'flex-end' }}>${item.purchaseAmount}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={styles.purchaseInfo}>
+                                    <Text>{item.purchaseType.toUpperCase()}</Text>
+                                    <View style={styles.purchaseAmount}>
+                                        <Text style={{ alignSelf: 'flex-end' }}>${item.rewardAmount}</Text>
+                                    </View>
+                                </View>
+
+                            </View>
+
+                            <View style={styles.transction}>
+                                <Text h5 style={styles.created_at}>{new Date(item.created_at).toLocaleString()}</Text>
+                            </View>
+                        </ListItem>
+                    ))
+                }
+            </ScrollView>
+
+        </React.Fragment>
+    )
 
     return (
         <>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
                 <Text h1 style={styles.appName}>Drinkwards</Text>
-                <ScrollView style={styles.scrollView}>
-                    {
-                        list.map((item, i) => (
-                            <ListItem key={i} bottomDivider>
-                                <Icon size={20} color='black' name='credit-card-alt' />
-                                <View style={styles.transction}>
-                                    <Text h5 style={styles.created_at}>{new Date(item.created_at).toLocaleString()}</Text>
-                                    <Text>{item.purchaseType.toUpperCase()}</Text>
-                                </View>
-                                <View style={styles.purchaseAmount}>
-                                    <Text h4
-                                        style={{ alignSelf: 'flex-end', fontWeight: 'bold' }}>
-                                        ${item.purchaseAmount}
-                                    </Text>
-                                </View>
-                            </ListItem>
-                        ))
-                    }
-                </ScrollView>
+                {
+                    !purchaseHistory ? <Text h4 style={styles.appName}>Make a Purchase Soon!</Text> :
+                        purchaseHistoryView
+                }
             </SafeAreaView>
         </>
     )
