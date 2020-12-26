@@ -6,6 +6,7 @@ import { name as appName } from './app.json'
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 import { createApolloClient } from './src/graphql/apollo'
+import 'react-native-gesture-handler'
 
 Amplify.configure({
 	...config,
