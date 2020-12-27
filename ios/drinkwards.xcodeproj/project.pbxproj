@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* drinkwardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* drinkwardsTests.m */; };
+		0EC36798DC06003CDDE52608 /* libPods-drinkwards-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AD80D61CA3941B97BF75A5 /* libPods-drinkwards-tvOS.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		29CEA9BCF07577892BC7F77F /* libPods-drinkwards-drinkwardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B67331B9638389FE2803497D /* libPods-drinkwards-drinkwardsTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* drinkwardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* drinkwardsTests.m */; };
-		7B4248FC5C1466F239FA1946 /* libPods-drinkwards-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 246A8B7B514FAA4144B35FE7 /* libPods-drinkwards-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C8CB63E5E408AD6D37D33C8F /* libPods-drinkwards-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 120BFA200D4320AAC355AF8E /* libPods-drinkwards-tvOSTests.a */; };
-		FF937AC7554AF862102C3420 /* libPods-drinkwards.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F5E792CFCF49CAD8403E3C /* libPods-drinkwards.a */; };
+		C6534FED3058FAD8D35CEC70 /* libPods-drinkwards.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB190035F046DE5401E8E005 /* libPods-drinkwards.a */; };
+		D444150BCCD2879D372A036F /* libPods-drinkwards-drinkwardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08D9D2D83B1766EE4E3A51A /* libPods-drinkwards-drinkwardsTests.a */; };
+		E77A2AA8293D3F9EC35A0D7F /* libPods-drinkwards-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09E5BE5C6242A4CC6BF0D18 /* libPods-drinkwards-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,29 +44,29 @@
 		00E356EE1AD99517003FC87E /* drinkwardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drinkwardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* drinkwardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drinkwardsTests.m; sourceTree = "<group>"; };
-		0628016090BD06EA7B6C0505 /* Pods-drinkwards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards.release.xcconfig"; path = "Target Support Files/Pods-drinkwards/Pods-drinkwards.release.xcconfig"; sourceTree = "<group>"; };
-		120BFA200D4320AAC355AF8E /* libPods-drinkwards-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* drinkwards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkwards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = drinkwards/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = drinkwards/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = drinkwards/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = drinkwards/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = drinkwards/main.m; sourceTree = "<group>"; };
-		246A8B7B514FAA4144B35FE7 /* libPods-drinkwards-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C394462F60E30ED83F65F80 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-drinkwardsTests.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FB73546E7D5E655B9680741 /* Pods-drinkwards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards/Pods-drinkwards.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* drinkwards-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "drinkwards-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* drinkwards-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "drinkwards-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D063430897F3F0664330ADA /* Pods-drinkwards-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOSTests/Pods-drinkwards-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		7D0C02F028D9BA92CF70AF47 /* Pods-drinkwards-drinkwardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-drinkwardsTests.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		4204EA1202BB144E0278D386 /* Pods-drinkwards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards.release.xcconfig"; path = "Target Support Files/Pods-drinkwards/Pods-drinkwards.release.xcconfig"; sourceTree = "<group>"; };
+		5182B1E599920FA2E55F4625 /* Pods-drinkwards-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOS/Pods-drinkwards-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		58D65B6C919CBD17E665B35A /* Pods-drinkwards-drinkwardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-drinkwardsTests.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		61B8B3ADF920C5EB72DFA9B0 /* Pods-drinkwards-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOSTests/Pods-drinkwards-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = drinkwards/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82F5E792CFCF49CAD8403E3C /* libPods-drinkwards.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A84D79A270EAB942E83FDBED /* Pods-drinkwards-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOS.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOS/Pods-drinkwards-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		B67331B9638389FE2803497D /* libPods-drinkwards-drinkwardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-drinkwardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D13DE53586E894FC42CA9AB5 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-drinkwardsTests.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E5297E42B2C58520CD4DD70D /* Pods-drinkwards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards/Pods-drinkwards.debug.xcconfig"; sourceTree = "<group>"; };
-		E5E15C5148E2619FF52A9B0A /* Pods-drinkwards-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOSTests/Pods-drinkwards-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E70894450A03F6120CF88104 /* Pods-drinkwards-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOS/Pods-drinkwards-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B09E5BE5C6242A4CC6BF0D18 /* libPods-drinkwards-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0AD80D61CA3941B97BF75A5 /* libPods-drinkwards-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB190035F046DE5401E8E005 /* libPods-drinkwards.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08D9D2D83B1766EE4E3A51A /* libPods-drinkwards-drinkwardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-drinkwards-drinkwardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		ED6390FECF650F7342E05B09 /* Pods-drinkwards-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOS.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOS/Pods-drinkwards-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		F9E533A013D51F7FFC7EE8EA /* Pods-drinkwards-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkwards-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-drinkwards-tvOSTests/Pods-drinkwards-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29CEA9BCF07577892BC7F77F /* libPods-drinkwards-drinkwardsTests.a in Frameworks */,
+				D444150BCCD2879D372A036F /* libPods-drinkwards-drinkwardsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF937AC7554AF862102C3420 /* libPods-drinkwards.a in Frameworks */,
+				C6534FED3058FAD8D35CEC70 /* libPods-drinkwards.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B4248FC5C1466F239FA1946 /* libPods-drinkwards-tvOS.a in Frameworks */,
+				0EC36798DC06003CDDE52608 /* libPods-drinkwards-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8CB63E5E408AD6D37D33C8F /* libPods-drinkwards-tvOSTests.a in Frameworks */,
+				E77A2AA8293D3F9EC35A0D7F /* libPods-drinkwards-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				82F5E792CFCF49CAD8403E3C /* libPods-drinkwards.a */,
-				B67331B9638389FE2803497D /* libPods-drinkwards-drinkwardsTests.a */,
-				246A8B7B514FAA4144B35FE7 /* libPods-drinkwards-tvOS.a */,
-				120BFA200D4320AAC355AF8E /* libPods-drinkwards-tvOSTests.a */,
+				CB190035F046DE5401E8E005 /* libPods-drinkwards.a */,
+				E08D9D2D83B1766EE4E3A51A /* libPods-drinkwards-drinkwardsTests.a */,
+				C0AD80D61CA3941B97BF75A5 /* libPods-drinkwards-tvOS.a */,
+				B09E5BE5C6242A4CC6BF0D18 /* libPods-drinkwards-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,14 +152,14 @@
 		2E0174F8BFE99C192499A205 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E5297E42B2C58520CD4DD70D /* Pods-drinkwards.debug.xcconfig */,
-				0628016090BD06EA7B6C0505 /* Pods-drinkwards.release.xcconfig */,
-				D13DE53586E894FC42CA9AB5 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */,
-				7D0C02F028D9BA92CF70AF47 /* Pods-drinkwards-drinkwardsTests.release.xcconfig */,
-				E70894450A03F6120CF88104 /* Pods-drinkwards-tvOS.debug.xcconfig */,
-				A84D79A270EAB942E83FDBED /* Pods-drinkwards-tvOS.release.xcconfig */,
-				E5E15C5148E2619FF52A9B0A /* Pods-drinkwards-tvOSTests.debug.xcconfig */,
-				4D063430897F3F0664330ADA /* Pods-drinkwards-tvOSTests.release.xcconfig */,
+				1FB73546E7D5E655B9680741 /* Pods-drinkwards.debug.xcconfig */,
+				4204EA1202BB144E0278D386 /* Pods-drinkwards.release.xcconfig */,
+				1C394462F60E30ED83F65F80 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */,
+				58D65B6C919CBD17E665B35A /* Pods-drinkwards-drinkwardsTests.release.xcconfig */,
+				5182B1E599920FA2E55F4625 /* Pods-drinkwards-tvOS.debug.xcconfig */,
+				ED6390FECF650F7342E05B09 /* Pods-drinkwards-tvOS.release.xcconfig */,
+				61B8B3ADF920C5EB72DFA9B0 /* Pods-drinkwards-tvOSTests.debug.xcconfig */,
+				F9E533A013D51F7FFC7EE8EA /* Pods-drinkwards-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -204,11 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "drinkwardsTests" */;
 			buildPhases = (
-				2AB7877C094091A952E3B42E /* [CP] Check Pods Manifest.lock */,
+				3A9B3CD4E0C92D1323D64E96 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4FA8D1C5C459A06B817760F0 /* [CP] Copy Pods Resources */,
+				F5346FFA00C30CD1E079664A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,13 +224,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "drinkwards" */;
 			buildPhases = (
-				D5B7E16534972E48EDC25F60 /* [CP] Check Pods Manifest.lock */,
+				BE36F319575009F22C47E319 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				79A321343F105C2F76F25B30 /* [CP] Copy Pods Resources */,
+				7DA9B095CCD5D2FF37E2FB53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,7 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "drinkwards-tvOS" */;
 			buildPhases = (
-				07D563DE9B34965A3290E0FA /* [CP] Check Pods Manifest.lock */,
+				24AB7195BE4ECCC4209006A8 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -265,7 +265,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "drinkwards-tvOSTests" */;
 			buildPhases = (
-				739ADBF5DD5276B8AB4EB661 /* [CP] Check Pods Manifest.lock */,
+				8CA45CE1FAC45C91BE6019D0 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -376,7 +376,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		07D563DE9B34965A3290E0FA /* [CP] Check Pods Manifest.lock */ = {
+		24AB7195BE4ECCC4209006A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +398,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2AB7877C094091A952E3B42E /* [CP] Check Pods Manifest.lock */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		3A9B3CD4E0C92D1323D64E96 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,71 +434,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+		7DA9B095CCD5D2FF37E2FB53 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		4FA8D1C5C459A06B817760F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests-resources.sh",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-drinkwards/Pods-drinkwards-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-drinkwards/Pods-drinkwards-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-drinkwards/Pods-drinkwards-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		739ADBF5DD5276B8AB4EB661 /* [CP] Check Pods Manifest.lock */ = {
+		8CA45CE1FAC45C91BE6019D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,57 +473,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79A321343F105C2F76F25B30 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-drinkwards/Pods-drinkwards-resources.sh",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-drinkwards/Pods-drinkwards-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5B7E16534972E48EDC25F60 /* [CP] Check Pods Manifest.lock */ = {
+		BE36F319575009F22C47E319 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,6 +493,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5346FFA00C30CD1E079664A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-drinkwards-drinkwardsTests/Pods-drinkwards-drinkwardsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -671,7 +605,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D13DE53586E894FC42CA9AB5 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */;
+			baseConfigurationReference = 1C394462F60E30ED83F65F80 /* Pods-drinkwards-drinkwardsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -698,7 +632,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D0C02F028D9BA92CF70AF47 /* Pods-drinkwards-drinkwardsTests.release.xcconfig */;
+			baseConfigurationReference = 58D65B6C919CBD17E665B35A /* Pods-drinkwards-drinkwardsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -722,12 +656,14 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5297E42B2C58520CD4DD70D /* Pods-drinkwards.debug.xcconfig */;
+			baseConfigurationReference = 1FB73546E7D5E655B9680741 /* Pods-drinkwards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7RCBT455J;
+				DEVELOPMENT_TEAM = K55MC628G5;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = drinkwards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -739,8 +675,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = testbeerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drinkwards;
 				PRODUCT_NAME = drinkwards;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -749,12 +686,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0628016090BD06EA7B6C0505 /* Pods-drinkwards.release.xcconfig */;
+			baseConfigurationReference = 4204EA1202BB144E0278D386 /* Pods-drinkwards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7RCBT455J;
+				DEVELOPMENT_TEAM = K55MC628G5;
 				INFOPLIST_FILE = drinkwards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -765,8 +704,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = testbeerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drinkwards;
 				PRODUCT_NAME = drinkwards;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -774,7 +714,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E70894450A03F6120CF88104 /* Pods-drinkwards-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 5182B1E599920FA2E55F4625 /* Pods-drinkwards-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -805,7 +745,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A84D79A270EAB942E83FDBED /* Pods-drinkwards-tvOS.release.xcconfig */;
+			baseConfigurationReference = ED6390FECF650F7342E05B09 /* Pods-drinkwards-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -836,7 +776,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5E15C5148E2619FF52A9B0A /* Pods-drinkwards-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 61B8B3ADF920C5EB72DFA9B0 /* Pods-drinkwards-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -867,7 +807,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D063430897F3F0664330ADA /* Pods-drinkwards-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = F9E533A013D51F7FFC7EE8EA /* Pods-drinkwards-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

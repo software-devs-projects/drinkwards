@@ -4,7 +4,9 @@ import {
 	StatusBar,
 	View,
 	StyleSheet,
-	Button
+	Button,
+	ScrollView,
+	RefreshControl
 } from 'react-native'
 import {
 	Text
@@ -21,6 +23,9 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexGrow: 1,
 		padding: 10
+	},
+	scrollView: {
+		flex: 1,
 	},
 	appName: {
 		color: 'white',
@@ -58,9 +63,16 @@ const styles = StyleSheet.create({
 	}
 })
 
+const wait = (timeout) => {
+	return new Promise(resolve => {
+	  setTimeout(resolve, timeout);
+	});
+}
+
 const UserHomeScreen = () => {
 	const [getRewardPoints, rewardPointsResponse] = useLazyQuery(GET_REWARD_POINTS)
 
+	const [refreshing, setRefreshing] = React.useState(false)
 	const [rewardPoints, setRewardPoints] = useState(0)
 	const [userId, setUserId] = useState(null)
 	const [username, setUsername] = useState('')
@@ -92,6 +104,7 @@ const UserHomeScreen = () => {
 	useEffect(() => {
 		if (rewardPointsResponse.data) {
 			setRewardPoints(rewardPointsResponse.data.user_by_pk.rewardPoints)
+			setRefreshing(false)
 		}
 	}, [rewardPointsResponse])
 
@@ -99,30 +112,46 @@ const UserHomeScreen = () => {
 		Auth.signOut()
 	}
 
+	const onRefresh = React.useCallback(() => {
+		setRefreshing(true)
+		setUserData()
+	}, [])
+
 	return (
 		<>
 			<StatusBar barStyle="light-content" />
 			<SafeAreaView style={styles.body}>
-				<Text h1 style={styles.appName}>Drinkwards</Text>
-				<Text h4 style={styles.usernameContainer}>
-					<Text style={styles.username}>
-						{`Hey ${username}`}
+				<ScrollView
+					contentContainerStyle={styles.scrollView}
+					refreshControl={
+						<RefreshControl
+							refreshing={refreshing}
+							onRefresh={onRefresh}
+							tintColor="white"
+						/>
+					}
+				>
+					<Text h1 style={styles.appName}>Drinkwards</Text>
+					<Text h4 style={styles.usernameContainer}>
+						<Text style={styles.username}>
+							{`Hey ${username}`}
+						</Text>
+						🍺
 					</Text>
-					🍺
-				</Text>
-				<LinearGradient colors={['#70371f', '#AA4B2B', '#FF9A75']} style={styles.linearGradient}>
-					<Text h4 style={styles.cardTitle}>Reward Dollars</Text>
-					<View>
-						<Text h1 style={styles.rewards}>${rewardPoints.toFixed(2)}</Text>
+					<LinearGradient colors={['#70371f', '#AA4B2B', '#FF9A75']} style={styles.linearGradient}>
+						<Text h4 style={styles.cardTitle}>Reward Dollars</Text>
+						<View>
+							<Text h1 style={styles.rewards}>${rewardPoints.toFixed(2)}</Text>
+						</View>
+					</LinearGradient>
+					<View style={styles.qrContainer}>
+						{userId && (<QRCode
+							value={userId}
+							size={200}
+						/>)}
 					</View>
-				</LinearGradient>
-				<View style={styles.qrContainer}>
-					{userId && (<QRCode
-						value={userId}
-						size={200}
-					/>)}
-				</View>
-				<Button onPress={handleLogout} title={'Log out'} />
+					<Button onPress={handleLogout} title={'Log out'} />
+				</ScrollView>
 			</SafeAreaView>
 		</>
 	)
